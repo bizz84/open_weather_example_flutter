@@ -1,8 +1,6 @@
 # Flutter Weather App Example
 
-An example Flutter weather app using the OpenWeatherMap API.
-
-<img src="https://raw.githubusercontent.com/bizz84/open_weather_example_flutter/main/.github/images/weather-forecast.png" alt="Flutter Weather App Preview" width=50% height=50%>
+An example Flutter weather app using the [OpenWeatherMap API](https://openweathermap.org/api).
 
 <img src="https://github.com/bizz84/open_weather_example_flutter/blob/main/.github/images/weather-forecast.png?raw=true" alt="Flutter Weather App Preview" width=50% height=50%>
 
@@ -21,7 +19,7 @@ The app is composed by two main layers.
 
 ### Data Layer
 
-The data layer contains a single weather repository that is used to fetch weather data from the [OpenStreetMap API](https://openweathermap.org/api).
+The data layer contains a single weather repository that is used to fetch weather data from the [OpenWeatherMap API](https://openweathermap.org/api).
 
 The data is then parsed (using Freezed) and returned using **type-safe** entity classes (`Weather` and `Forecast`).
 
