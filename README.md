@@ -4,6 +4,8 @@ An example Flutter weather app using the OpenWeatherMap API.
 
 <img src="https://raw.githubusercontent.com/bizz84/open_weather_example_flutter/main/.github/images/weather-forecast.png" alt="Flutter Weather App Preview" width=50% height=50%>
 
+<img src="https://github.com/bizz84/open_weather_example_flutter/blob/main/.github/images/weather-forecast.png?raw=true" alt="Flutter Weather App Preview" width=50% height=50%>
+
 ## Related Tutorials
 
 - [Flutter App Architecture: The Repository Pattern](https://codewithandrea.com/articles/flutter-repository-pattern/)
