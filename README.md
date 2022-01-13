@@ -2,7 +2,7 @@
 
 An example Flutter weather app using the OpenWeatherMap API.
 
-![Flutter Weather App Preview](/.github/images/weather-forecast.png)
+<img src="https://raw.githubusercontent.com/bizz84/open_weather_example_flutter/main/.github/images/weather-forecast.png" alt="Flutter Weather App Preview" width=50% height=50%>
 
 ## Related Tutorials
 
