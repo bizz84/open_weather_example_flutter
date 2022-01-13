@@ -37,6 +37,14 @@ Instead, they watch some controllers that extend the `StateNotifier` class (usin
 
 This allows to map the data from the layer above to `AsyncValue` objects that can be mapped to the appropriate UI states (data, loading, error).
 
+## Packages in use
+
+- [riverpod](https://pub.dev/packages/riverpod) for state management
+- [freezed](https://pub.dev/packages/freezed) for code generation
+- [http](https://pub.dev/packages/http) for talking to the REST API
+- [cached_network_image](https://pub.dev/packages/cached_network_image) for caching images
+- [mocktail](https://pub.dev/packages/mocktail) for testing
+
 ## About the OpenStreetMap weather API
 
 The app shows data from the following endpoints:
