@@ -6,12 +6,11 @@ import 'package:open_weather_example_flutter/src/features/weather_page/hourly_we
 import 'package:open_weather_example_flutter/src/features/weather_page/weather_icon_image.dart';
 
 class HourlyWeather extends ConsumerWidget {
-  const HourlyWeather({Key? key, required this.city}) : super(key: key);
-  final String city;
+  const HourlyWeather({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final forecastDataValue = ref.watch(hourlyWeatherControllerProvider(city));
+    final forecastDataValue = ref.watch(hourlyWeatherControllerProvider);
     return forecastDataValue.when(
       data: (forecastData) {
         // API returns data points in 3-hour intervals -> 1 day = 8 intervals

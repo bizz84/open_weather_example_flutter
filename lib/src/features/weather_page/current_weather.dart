@@ -5,12 +5,11 @@ import 'package:open_weather_example_flutter/src/features/weather_page/current_w
 import 'package:open_weather_example_flutter/src/features/weather_page/weather_icon_image.dart';
 
 class CurrentWeather extends ConsumerWidget {
-  const CurrentWeather({Key? key, required this.city}) : super(key: key);
-  final String city;
-
+  const CurrentWeather({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final weatherDataValue = ref.watch(currentWeatherControllerProvider(city));
+    final weatherDataValue = ref.watch(currentWeatherControllerProvider);
+    final city = ref.watch(currentWeatherControllerProvider.notifier).city;
     final textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,

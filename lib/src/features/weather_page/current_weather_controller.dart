@@ -1,14 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:open_weather_example_flutter/src/entities/weather/weather_data.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/city_search_controller.dart';
 import 'package:open_weather_example_flutter/src/repositories/api_error.dart';
 import 'package:open_weather_example_flutter/src/repositories/weather_repository.dart';
 
 class CurrentWeatherController extends StateNotifier<AsyncValue<WeatherData>> {
-  CurrentWeatherController(this._weatherRepository, {required String city})
+  CurrentWeatherController(this._weatherRepository, {required this.city})
       : super(const AsyncValue.loading()) {
     getWeather(city: city);
   }
   final HttpWeatherRepository _weatherRepository;
+  final String city;
 
   Future<void> getWeather({required String city}) async {
     try {
@@ -21,9 +23,9 @@ class CurrentWeatherController extends StateNotifier<AsyncValue<WeatherData>> {
   }
 }
 
-final currentWeatherControllerProvider = StateNotifierProvider.autoDispose
-    .family<CurrentWeatherController, AsyncValue<WeatherData>, String>(
-        (ref, city) {
+final currentWeatherControllerProvider = StateNotifierProvider.autoDispose<
+    CurrentWeatherController, AsyncValue<WeatherData>>((ref) {
   final weatherRepository = ref.watch(weatherRepositoryProvider);
-  return CurrentWeatherController(weatherRepository, city: city);
+  final cityState = ref.watch(citySearchControllerProvider);
+  return CurrentWeatherController(weatherRepository, city: cityState);
 });
