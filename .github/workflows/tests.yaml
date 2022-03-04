@@ -5,5 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Write api_keys.dart
+      run: echo '{{ secrets.API_KEY }}' > lib/src/api/api_keys.dart
     - uses: subosito/flutter-action@v1
     - run: flutter test
