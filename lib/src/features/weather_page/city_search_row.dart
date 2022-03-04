@@ -1,19 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:open_weather_example_flutter/src/constants/app_colors.dart';
-import 'package:open_weather_example_flutter/src/features/weather_page/city_search_controller.dart';
 
-class CitySearchRow extends ConsumerWidget {
+final cityProvider = StateProvider<String>((ref) {
+  return 'London';
+});
+
+class CitySearchRow extends ConsumerStatefulWidget {
   const CitySearchRow({Key? key}) : super(key: key);
-  static const _radius = 30.0; // circular radius
+  @override
+  ConsumerState<CitySearchRow> createState() => _CitySearchRowState();
+}
+
+class _CitySearchRowState extends ConsumerState<CitySearchRow> {
+  static const _radius = 30.0;
+
+  late final _searchController = TextEditingController();
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final citySearchController =
-        ref.watch(citySearchControllerProvider.notifier);
-    final textStyle = Theme.of(context).textTheme;
-    final searchController =
-        TextEditingController(text: citySearchController.state);
+  void initState() {
+    super.initState();
+    _searchController.text = ref.read(cityProvider);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  // circular radius
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
@@ -23,7 +41,7 @@ class CitySearchRow extends ConsumerWidget {
             child: SizedBox(
               height: 50,
               child: TextField(
-                controller: searchController,
+                controller: _searchController,
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.black),
                 decoration: const InputDecoration(
@@ -36,28 +54,30 @@ class CitySearchRow extends ConsumerWidget {
                   ),
                 ),
                 onSubmitted: (value) =>
-                    citySearchController.updateSearchState(value),
+                    ref.read(cityProvider.state).state = value,
               ),
             ),
           ),
           InkWell(
-              child: Container(
-                height: 50,
-                alignment: Alignment.center,
-                decoration: const BoxDecoration(
-                    color: AppColors.accentColor,
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(_radius),
-                        bottomRight: Radius.circular(_radius))),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Text('search', style: textStyle.bodyText1),
-                ),
+            child: Container(
+              height: 50,
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(
+                  color: AppColors.accentColor,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(_radius),
+                      bottomRight: Radius.circular(_radius))),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Text('search',
+                    style: Theme.of(context).textTheme.bodyText1),
               ),
-              onTap: () {
-                FocusScope.of(context).unfocus();
-                citySearchController.updateSearchState(searchController.text);
-              })
+            ),
+            onTap: () {
+              FocusScope.of(context).unfocus();
+              ref.read(cityProvider.state).state = _searchController.text;
+            },
+          )
         ],
       ),
     );
