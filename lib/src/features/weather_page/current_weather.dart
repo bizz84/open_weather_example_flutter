@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:open_weather_example_flutter/src/entities/weather/weather_data.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/city_search_box.dart';
 import 'package:open_weather_example_flutter/src/features/weather_page/current_weather_controller.dart';
 import 'package:open_weather_example_flutter/src/features/weather_page/weather_icon_image.dart';
 
@@ -9,12 +10,11 @@ class CurrentWeather extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final weatherDataValue = ref.watch(currentWeatherControllerProvider);
-    final city = ref.watch(currentWeatherControllerProvider.notifier).city;
-    final textTheme = Theme.of(context).textTheme;
+    final city = ref.watch(cityProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(city, style: textTheme.headline4),
+        Text(city, style: Theme.of(context).textTheme.headline4),
         weatherDataValue.when(
           data: (weatherData) => CurrentWeatherContents(data: weatherData),
           loading: () => const Center(child: CircularProgressIndicator()),

@@ -6,13 +6,13 @@ final cityProvider = StateProvider<String>((ref) {
   return 'London';
 });
 
-class CitySearchRow extends ConsumerStatefulWidget {
-  const CitySearchRow({Key? key}) : super(key: key);
+class CitySearchBox extends ConsumerStatefulWidget {
+  const CitySearchBox({Key? key}) : super(key: key);
   @override
-  ConsumerState<CitySearchRow> createState() => _CitySearchRowState();
+  ConsumerState<CitySearchBox> createState() => _CitySearchRowState();
 }
 
-class _CitySearchRowState extends ConsumerState<CitySearchRow> {
+class _CitySearchRowState extends ConsumerState<CitySearchBox> {
   static const _radius = 30.0;
 
   late final _searchController = TextEditingController();
@@ -63,10 +63,12 @@ class _CitySearchRowState extends ConsumerState<CitySearchRow> {
               height: 50,
               alignment: Alignment.center,
               decoration: const BoxDecoration(
-                  color: AppColors.accentColor,
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(_radius),
-                      bottomRight: Radius.circular(_radius))),
+                color: AppColors.accentColor,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(_radius),
+                  bottomRight: Radius.circular(_radius),
+                ),
+              ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Text('search',
