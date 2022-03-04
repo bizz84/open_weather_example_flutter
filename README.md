@@ -12,6 +12,7 @@ An example Flutter weather app using the [OpenWeatherMap API](https://openweathe
 
 - [x] Current weather (condition and temperature)
 - [x] 5-day weather forecast
+- [x] Search by city
 
 ## App Architecture
 
