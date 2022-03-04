@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of forecast;
 
@@ -26,7 +27,7 @@ class _$ForecastTearOff {
     );
   }
 
-  Forecast fromJson(Map<String, Object> json) {
+  Forecast fromJson(Map<String, Object?> json) {
     return Forecast.fromJson(json);
   }
 }
@@ -108,7 +109,7 @@ class _$_Forecast implements _Forecast {
   _$_Forecast({required this.list});
 
   factory _$_Forecast.fromJson(Map<String, dynamic> json) =>
-      _$_$_ForecastFromJson(json);
+      _$$_ForecastFromJson(json);
 
   @override
   final List<Weather> list;
@@ -121,14 +122,14 @@ class _$_Forecast implements _Forecast {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Forecast &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _Forecast &&
+            const DeepCollectionEquality().equals(other.list, list));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(list));
 
   @JsonKey(ignore: true)
   @override
@@ -137,7 +138,7 @@ class _$_Forecast implements _Forecast {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ForecastToJson(this);
+    return _$$_ForecastToJson(this);
   }
 }
 
@@ -147,7 +148,7 @@ abstract class _Forecast implements Forecast {
   factory _Forecast.fromJson(Map<String, dynamic> json) = _$_Forecast.fromJson;
 
   @override
-  List<Weather> get list => throw _privateConstructorUsedError;
+  List<Weather> get list;
   @override
   @JsonKey(ignore: true)
   _$ForecastCopyWith<_Forecast> get copyWith =>
