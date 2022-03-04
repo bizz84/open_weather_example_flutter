@@ -36,6 +36,8 @@ class HttpWeatherRepository {
           return builder(data);
         case 401:
           throw const APIError.invalidApiKey();
+        case 404:
+          throw const APIError.notFound();
         default:
           throw const APIError.unknown();
       }

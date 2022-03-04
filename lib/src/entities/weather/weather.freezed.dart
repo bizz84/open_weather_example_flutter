@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'weather.dart';
 
@@ -31,7 +32,7 @@ class _$WeatherParamsTearOff {
     );
   }
 
-  WeatherParams fromJson(Map<String, Object> json) {
+  WeatherParams fromJson(Map<String, Object?> json) {
     return WeatherParams.fromJson(json);
   }
 }
@@ -152,7 +153,7 @@ class _$_WeatherParams implements _WeatherParams {
       @JsonKey(name: 'temp_max') required this.tempMax});
 
   factory _$_WeatherParams.fromJson(Map<String, dynamic> json) =>
-      _$_$_WeatherParamsFromJson(json);
+      _$$_WeatherParamsFromJson(json);
 
   @override
   final double temp;
@@ -171,22 +172,19 @@ class _$_WeatherParams implements _WeatherParams {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WeatherParams &&
-            (identical(other.temp, temp) ||
-                const DeepCollectionEquality().equals(other.temp, temp)) &&
-            (identical(other.tempMin, tempMin) ||
-                const DeepCollectionEquality()
-                    .equals(other.tempMin, tempMin)) &&
-            (identical(other.tempMax, tempMax) ||
-                const DeepCollectionEquality().equals(other.tempMax, tempMax)));
+        (other.runtimeType == runtimeType &&
+            other is _WeatherParams &&
+            const DeepCollectionEquality().equals(other.temp, temp) &&
+            const DeepCollectionEquality().equals(other.tempMin, tempMin) &&
+            const DeepCollectionEquality().equals(other.tempMax, tempMax));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(temp) ^
-      const DeepCollectionEquality().hash(tempMin) ^
-      const DeepCollectionEquality().hash(tempMax);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(temp),
+      const DeepCollectionEquality().hash(tempMin),
+      const DeepCollectionEquality().hash(tempMax));
 
   @JsonKey(ignore: true)
   @override
@@ -195,7 +193,7 @@ class _$_WeatherParams implements _WeatherParams {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WeatherParamsToJson(this);
+    return _$$_WeatherParamsToJson(this);
   }
 }
 
@@ -209,13 +207,13 @@ abstract class _WeatherParams implements WeatherParams {
       _$_WeatherParams.fromJson;
 
   @override
-  double get temp => throw _privateConstructorUsedError;
+  double get temp;
   @override
   @JsonKey(name: 'temp_min')
-  double get tempMin => throw _privateConstructorUsedError;
+  double get tempMin;
   @override
   @JsonKey(name: 'temp_max')
-  double get tempMax => throw _privateConstructorUsedError;
+  double get tempMax;
   @override
   @JsonKey(ignore: true)
   _$WeatherParamsCopyWith<_WeatherParams> get copyWith =>
@@ -241,7 +239,7 @@ class _$WeatherInfoTearOff {
     );
   }
 
-  WeatherInfo fromJson(Map<String, Object> json) {
+  WeatherInfo fromJson(Map<String, Object?> json) {
     return WeatherInfo.fromJson(json);
   }
 }
@@ -350,7 +348,7 @@ class _$_WeatherInfo implements _WeatherInfo {
       {required this.main, required this.description, required this.icon});
 
   factory _$_WeatherInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_WeatherInfoFromJson(json);
+      _$$_WeatherInfoFromJson(json);
 
   @override
   final String main;
@@ -367,22 +365,20 @@ class _$_WeatherInfo implements _WeatherInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WeatherInfo &&
-            (identical(other.main, main) ||
-                const DeepCollectionEquality().equals(other.main, main)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)));
+        (other.runtimeType == runtimeType &&
+            other is _WeatherInfo &&
+            const DeepCollectionEquality().equals(other.main, main) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.icon, icon));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(main) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(icon);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(main),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(icon));
 
   @JsonKey(ignore: true)
   @override
@@ -391,7 +387,7 @@ class _$_WeatherInfo implements _WeatherInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WeatherInfoToJson(this);
+    return _$$_WeatherInfoToJson(this);
   }
 }
 
@@ -405,11 +401,11 @@ abstract class _WeatherInfo implements WeatherInfo {
       _$_WeatherInfo.fromJson;
 
   @override
-  String get main => throw _privateConstructorUsedError;
+  String get main;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get icon => throw _privateConstructorUsedError;
+  String get icon;
   @override
   @JsonKey(ignore: true)
   _$WeatherInfoCopyWith<_WeatherInfo> get copyWith =>
@@ -435,7 +431,7 @@ class _$WeatherTearOff {
     );
   }
 
-  Weather fromJson(Map<String, Object> json) {
+  Weather fromJson(Map<String, Object?> json) {
     return Weather.fromJson(json);
   }
 }
@@ -561,7 +557,7 @@ class _$_Weather implements _Weather {
       required this.dt});
 
   factory _$_Weather.fromJson(Map<String, dynamic> json) =>
-      _$_$_WeatherFromJson(json);
+      _$$_WeatherFromJson(json);
 
   @override
   @JsonKey(name: 'main')
@@ -580,23 +576,21 @@ class _$_Weather implements _Weather {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Weather &&
-            (identical(other.weatherParams, weatherParams) ||
-                const DeepCollectionEquality()
-                    .equals(other.weatherParams, weatherParams)) &&
-            (identical(other.weatherInfo, weatherInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.weatherInfo, weatherInfo)) &&
-            (identical(other.dt, dt) ||
-                const DeepCollectionEquality().equals(other.dt, dt)));
+        (other.runtimeType == runtimeType &&
+            other is _Weather &&
+            const DeepCollectionEquality()
+                .equals(other.weatherParams, weatherParams) &&
+            const DeepCollectionEquality()
+                .equals(other.weatherInfo, weatherInfo) &&
+            const DeepCollectionEquality().equals(other.dt, dt));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(weatherParams) ^
-      const DeepCollectionEquality().hash(weatherInfo) ^
-      const DeepCollectionEquality().hash(dt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(weatherParams),
+      const DeepCollectionEquality().hash(weatherInfo),
+      const DeepCollectionEquality().hash(dt));
 
   @JsonKey(ignore: true)
   @override
@@ -605,7 +599,7 @@ class _$_Weather implements _Weather {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_WeatherToJson(this);
+    return _$$_WeatherToJson(this);
   }
 }
 
@@ -619,12 +613,12 @@ abstract class _Weather implements Weather {
 
   @override
   @JsonKey(name: 'main')
-  WeatherParams get weatherParams => throw _privateConstructorUsedError;
+  WeatherParams get weatherParams;
   @override
   @JsonKey(name: 'weather')
-  List<WeatherInfo> get weatherInfo => throw _privateConstructorUsedError;
+  List<WeatherInfo> get weatherInfo;
   @override
-  int get dt => throw _privateConstructorUsedError;
+  int get dt;
   @override
   @JsonKey(ignore: true)
   _$WeatherCopyWith<_Weather> get copyWith =>

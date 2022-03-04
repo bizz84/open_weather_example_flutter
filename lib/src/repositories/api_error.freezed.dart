@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'api_error.dart';
 
@@ -24,6 +25,10 @@ class _$APIErrorTearOff {
     return const _NoInternetConnection();
   }
 
+  _NotFound notFound() {
+    return const _NotFound();
+  }
+
   _Unknown unknown() {
     return const _Unknown();
   }
@@ -38,13 +43,23 @@ mixin _$APIError {
   TResult when<TResult extends Object?>({
     required TResult Function() invalidApiKey,
     required TResult Function() noInternetConnection,
+    required TResult Function() notFound,
     required TResult Function() unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? invalidApiKey,
+    TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
+    TResult Function()? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? invalidApiKey,
     TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
     TResult Function()? unknown,
     required TResult orElse(),
   }) =>
@@ -53,13 +68,23 @@ mixin _$APIError {
   TResult map<TResult extends Object?>({
     required TResult Function(_InvalidApiKey value) invalidApiKey,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_NotFound value) notFound,
     required TResult Function(_Unknown value) unknown,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InvalidApiKey value)? invalidApiKey,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_Unknown value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InvalidApiKey value)? invalidApiKey,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
     TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) =>
@@ -111,7 +136,8 @@ class _$_InvalidApiKey implements _InvalidApiKey {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InvalidApiKey);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _InvalidApiKey);
   }
 
   @override
@@ -122,6 +148,7 @@ class _$_InvalidApiKey implements _InvalidApiKey {
   TResult when<TResult extends Object?>({
     required TResult Function() invalidApiKey,
     required TResult Function() noInternetConnection,
+    required TResult Function() notFound,
     required TResult Function() unknown,
   }) {
     return invalidApiKey();
@@ -129,9 +156,21 @@ class _$_InvalidApiKey implements _InvalidApiKey {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? invalidApiKey,
+    TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
+    TResult Function()? unknown,
+  }) {
+    return invalidApiKey?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? invalidApiKey,
     TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
@@ -146,6 +185,7 @@ class _$_InvalidApiKey implements _InvalidApiKey {
   TResult map<TResult extends Object?>({
     required TResult Function(_InvalidApiKey value) invalidApiKey,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_NotFound value) notFound,
     required TResult Function(_Unknown value) unknown,
   }) {
     return invalidApiKey(this);
@@ -153,9 +193,21 @@ class _$_InvalidApiKey implements _InvalidApiKey {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InvalidApiKey value)? invalidApiKey,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_Unknown value)? unknown,
+  }) {
+    return invalidApiKey?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InvalidApiKey value)? invalidApiKey,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
     TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) {
@@ -201,7 +253,8 @@ class _$_NoInternetConnection implements _NoInternetConnection {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NoInternetConnection);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NoInternetConnection);
   }
 
   @override
@@ -212,6 +265,7 @@ class _$_NoInternetConnection implements _NoInternetConnection {
   TResult when<TResult extends Object?>({
     required TResult Function() invalidApiKey,
     required TResult Function() noInternetConnection,
+    required TResult Function() notFound,
     required TResult Function() unknown,
   }) {
     return noInternetConnection();
@@ -219,9 +273,21 @@ class _$_NoInternetConnection implements _NoInternetConnection {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? invalidApiKey,
+    TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
+    TResult Function()? unknown,
+  }) {
+    return noInternetConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? invalidApiKey,
     TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
@@ -236,6 +302,7 @@ class _$_NoInternetConnection implements _NoInternetConnection {
   TResult map<TResult extends Object?>({
     required TResult Function(_InvalidApiKey value) invalidApiKey,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_NotFound value) notFound,
     required TResult Function(_Unknown value) unknown,
   }) {
     return noInternetConnection(this);
@@ -243,9 +310,21 @@ class _$_NoInternetConnection implements _NoInternetConnection {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InvalidApiKey value)? invalidApiKey,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_Unknown value)? unknown,
+  }) {
+    return noInternetConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InvalidApiKey value)? invalidApiKey,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
     TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) {
@@ -258,6 +337,120 @@ class _$_NoInternetConnection implements _NoInternetConnection {
 
 abstract class _NoInternetConnection implements APIError {
   const factory _NoInternetConnection() = _$_NoInternetConnection;
+}
+
+/// @nodoc
+abstract class _$NotFoundCopyWith<$Res> {
+  factory _$NotFoundCopyWith(_NotFound value, $Res Function(_NotFound) then) =
+      __$NotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NotFoundCopyWithImpl<$Res> extends _$APIErrorCopyWithImpl<$Res>
+    implements _$NotFoundCopyWith<$Res> {
+  __$NotFoundCopyWithImpl(_NotFound _value, $Res Function(_NotFound) _then)
+      : super(_value, (v) => _then(v as _NotFound));
+
+  @override
+  _NotFound get _value => super._value as _NotFound;
+}
+
+/// @nodoc
+
+class _$_NotFound implements _NotFound {
+  const _$_NotFound();
+
+  @override
+  String toString() {
+    return 'APIError.notFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() invalidApiKey,
+    required TResult Function() noInternetConnection,
+    required TResult Function() notFound,
+    required TResult Function() unknown,
+  }) {
+    return notFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? invalidApiKey,
+    TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
+    TResult Function()? unknown,
+  }) {
+    return notFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? invalidApiKey,
+    TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (notFound != null) {
+      return notFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InvalidApiKey value) invalidApiKey,
+    required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_Unknown value) unknown,
+  }) {
+    return notFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InvalidApiKey value)? invalidApiKey,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_Unknown value)? unknown,
+  }) {
+    return notFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InvalidApiKey value)? invalidApiKey,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_Unknown value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (notFound != null) {
+      return notFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotFound implements APIError {
+  const factory _NotFound() = _$_NotFound;
 }
 
 /// @nodoc
@@ -288,7 +481,8 @@ class _$_Unknown implements _Unknown {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unknown);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unknown);
   }
 
   @override
@@ -299,6 +493,7 @@ class _$_Unknown implements _Unknown {
   TResult when<TResult extends Object?>({
     required TResult Function() invalidApiKey,
     required TResult Function() noInternetConnection,
+    required TResult Function() notFound,
     required TResult Function() unknown,
   }) {
     return unknown();
@@ -306,9 +501,21 @@ class _$_Unknown implements _Unknown {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? invalidApiKey,
+    TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
+    TResult Function()? unknown,
+  }) {
+    return unknown?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? invalidApiKey,
     TResult Function()? noInternetConnection,
+    TResult Function()? notFound,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
@@ -323,6 +530,7 @@ class _$_Unknown implements _Unknown {
   TResult map<TResult extends Object?>({
     required TResult Function(_InvalidApiKey value) invalidApiKey,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_NotFound value) notFound,
     required TResult Function(_Unknown value) unknown,
   }) {
     return unknown(this);
@@ -330,9 +538,21 @@ class _$_Unknown implements _Unknown {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InvalidApiKey value)? invalidApiKey,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_Unknown value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InvalidApiKey value)? invalidApiKey,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_NotFound value)? notFound,
     TResult Function(_Unknown value)? unknown,
     required TResult orElse(),
   }) {
