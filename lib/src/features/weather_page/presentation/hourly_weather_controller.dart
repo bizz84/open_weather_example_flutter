@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:open_weather_example_flutter/src/entities/forecast/forecast_data.dart';
-import 'package:open_weather_example_flutter/src/features/weather_page/city_search_box.dart';
-import 'package:open_weather_example_flutter/src/repositories/api_error.dart';
-import 'package:open_weather_example_flutter/src/repositories/weather_repository.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/domain/forecast/forecast_data.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/presentation/city_search_box.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/data/api_error.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/data/weather_repository.dart';
 
 class HourlyWeatherController extends StateNotifier<AsyncValue<ForecastData>> {
   HourlyWeatherController(this._weatherRepository, {required String city})

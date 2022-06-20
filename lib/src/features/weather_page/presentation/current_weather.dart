@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:open_weather_example_flutter/src/entities/weather/weather_data.dart';
-import 'package:open_weather_example_flutter/src/features/weather_page/city_search_box.dart';
-import 'package:open_weather_example_flutter/src/features/weather_page/current_weather_controller.dart';
-import 'package:open_weather_example_flutter/src/features/weather_page/weather_icon_image.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/domain/weather/weather_data.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/presentation/city_search_box.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/presentation/current_weather_controller.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/presentation/weather_icon_image.dart';
 
 class CurrentWeather extends ConsumerWidget {
   const CurrentWeather({Key? key}) : super(key: key);

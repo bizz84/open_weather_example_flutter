@@ -1,7 +1,7 @@
 library forecast;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:open_weather_example_flutter/src/entities/weather/weather.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/domain/weather/weather.dart';
 
 part 'forecast.g.dart';
 part 'forecast.freezed.dart';
