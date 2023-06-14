@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of forecast;
+part of 'forecast.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
