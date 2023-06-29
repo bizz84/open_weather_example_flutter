@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
 import 'package:open_weather_example_flutter/src/api/api.dart';
 import 'package:open_weather_example_flutter/src/entities/weather/weather.dart';
+import 'package:open_weather_example_flutter/src/repositories/api_exception.dart';
 import 'package:open_weather_example_flutter/src/repositories/weather_repository.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
@@ -88,6 +89,6 @@ void main() {
         .thenAnswer((_) => Future.value(http.Response('{}', 401)));
     // expectations
     expect(() => weatherRepository.getWeather(city: 'London'),
-        throwsA(isA<APIError>()));
+        throwsA(isA<APIException>()));
   });
 }
