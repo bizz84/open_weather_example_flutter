@@ -54,7 +54,7 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
                   ),
                 ),
                 onSubmitted: (value) =>
-                    ref.read(cityProvider.state).state = value,
+                    ref.read(cityProvider.notifier).state = value,
               ),
             ),
           ),
@@ -77,7 +77,7 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
             ),
             onTap: () {
               FocusScope.of(context).unfocus();
-              ref.read(cityProvider.state).state = _searchController.text;
+              ref.read(cityProvider.notifier).state = _searchController.text;
             },
           )
         ],
