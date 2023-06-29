@@ -57,14 +57,14 @@ class HourlyWeatherItem extends ConsumerWidget {
         children: [
           Text(
             DateFormat.E().format(data.date),
-            style: textTheme.caption!.copyWith(fontWeight: fontWeight),
+            style: textTheme.bodySmall!.copyWith(fontWeight: fontWeight),
           ),
           const SizedBox(height: 8),
           WeatherIconImage(iconUrl: data.iconUrl, size: 48),
           const SizedBox(height: 8),
           Text(
             '$temp°',
-            style: textTheme.bodyText1!.copyWith(fontWeight: fontWeight),
+            style: textTheme.bodyLarge!.copyWith(fontWeight: fontWeight),
           ),
         ],
       ),

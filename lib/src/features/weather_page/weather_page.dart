@@ -20,11 +20,11 @@ class WeatherPage extends StatelessWidget {
             colors: AppColors.rainGradient,
           ),
         ),
-        child: SafeArea(
+        child: const SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
-            children: const [
+            children: [
               Spacer(),
               CitySearchBox(),
               Spacer(),

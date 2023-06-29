@@ -14,7 +14,7 @@ class CurrentWeather extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(city, style: Theme.of(context).textTheme.headline4),
+        Text(city, style: Theme.of(context).textTheme.headlineMedium),
         weatherDataValue.when(
           data: (weatherData) => CurrentWeatherContents(data: weatherData),
           loading: () => const Center(child: CircularProgressIndicator()),
@@ -42,8 +42,8 @@ class CurrentWeatherContents extends ConsumerWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         WeatherIconImage(iconUrl: data.iconUrl, size: 120),
-        Text(temp, style: textTheme.headline2),
-        Text(highAndLow, style: textTheme.bodyText2),
+        Text(temp, style: textTheme.displayMedium),
+        Text(highAndLow, style: textTheme.bodyMedium),
       ],
     );
   }
