@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:open_weather_example_flutter/src/api/api.dart';
 import 'package:open_weather_example_flutter/src/api/api_keys.dart';
-import 'package:open_weather_example_flutter/src/entities/forecast/forecast.dart';
-import 'package:open_weather_example_flutter/src/entities/weather/weather.dart';
-import 'package:open_weather_example_flutter/src/repositories/api_exception.dart';
+import 'package:open_weather_example_flutter/src/features/weather/data/api_exception.dart';
+import 'package:open_weather_example_flutter/src/features/weather/domain/forecast/forecast.dart';
+import 'package:open_weather_example_flutter/src/features/weather/domain/weather/weather.dart';
 
 /// Weather Repository using the http client. Calls API methods and parses responses.
 class HttpWeatherRepository {
