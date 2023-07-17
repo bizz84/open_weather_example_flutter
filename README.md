@@ -16,11 +16,11 @@ An example Flutter weather app using the [OpenWeatherMap API](https://openweathe
 
 ## App Architecture
 
-The app is composed by two main layers.
+The app is composed by three main layers.
 
 ### Data Layer
 
-The data layer contains a single weather repository that is used to fetch weather data from the [OpenWeatherMap API](https://openweathermap.org/api).
+The data layer contains a single `HttpWeatherRepository` that is used to fetch weather data from the [OpenWeatherMap API](https://openweathermap.org/api).
 
 The data is then parsed (using Freezed) and returned using **type-safe** entity classes (`Weather` and `Forecast`).
 
@@ -28,15 +28,42 @@ For more info about this, read this tutorial:
 
 - [Flutter App Architecture: The Repository Pattern](https://codewithandrea.com/articles/flutter-repository-pattern/)
 
+For more info about the project structure, read this:
+
+- [Flutter Project Structure: Feature-first or Layer-first?](https://codewithandrea.com/articles/flutter-project-structure/)
+
+### Application Layer
+
+This contains some providers that are used to fetch and cache the data from the `HttpWeatherRepository`.
+
+```dart
+// current city stored in the search box in the UI
+final cityProvider = StateProvider<String>((ref) {
+  return 'London';
+});
+
+// provider to fetch the current weather
+final currentWeatherProvider =
+    FutureProvider.autoDispose<WeatherData>((ref) async {
+  final city = ref.watch(cityProvider);
+  final weather =
+      await ref.watch(weatherRepositoryProvider).getWeather(city: city);
+  return WeatherData.from(weather);
+});
+
+// provider to fetch the hourly weather
+final hourlyWeatherProvider =
+    FutureProvider.autoDispose<ForecastData>((ref) async {
+  final city = ref.watch(cityProvider);
+  final forecast =
+      await ref.watch(weatherRepositoryProvider).getForecast(city: city);
+  return ForecastData.from(forecast);
+});
+```
+
 ### Presentation Layer
 
-This layer holds all the widgets, along with their controllers.
-
-Widgets do not communicate directly with the repository.
-
-Instead, they watch some controllers that extend the `StateNotifier` class (using Riverpod).
-
-This allows to map the data from the layer above to `AsyncValue` objects that can be mapped to the appropriate UI states (data, loading, error).
+This layer holds all the widgets, which fetch the data from the `FutureProvider`s above and map the resulting `AsyncValue` objects to the appropriate UI states (data, loading, error).
 
 ## Packages in use
 
