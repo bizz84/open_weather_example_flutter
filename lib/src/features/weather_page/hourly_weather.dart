@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:open_weather_example_flutter/src/entities/forecast/forecast_data.dart';
 import 'package:open_weather_example_flutter/src/entities/weather/weather_data.dart';
-import 'package:open_weather_example_flutter/src/features/weather_page/hourly_weather_controller.dart';
+import 'package:open_weather_example_flutter/src/features/weather_page/city_search_box.dart';
 import 'package:open_weather_example_flutter/src/features/weather_page/weather_icon_image.dart';
+import 'package:open_weather_example_flutter/src/repositories/weather_repository.dart';
+
+final hourlyWeatherControllerProvider =
+    FutureProvider.autoDispose<ForecastData>((ref) async {
+  final city = ref.watch(cityProvider);
+  final forecast =
+      await ref.watch(weatherRepositoryProvider).getForecast(city: city);
+  return ForecastData.from(forecast);
+});
 
 class HourlyWeather extends ConsumerWidget {
   const HourlyWeather({Key? key}) : super(key: key);
