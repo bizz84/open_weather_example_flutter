@@ -49,6 +49,13 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
                         topLeft: Radius.circular(_radius),
                         bottomLeft: Radius.circular(_radius)),
                   ),
+                  prefixIcon: IconButton(
+                    icon: Icon(
+                      Icons.location_on,
+                      color: Color(0xFF4480C6),
+                    ),
+                    onPressed: null,
+                  ),
                 ),
                 onSubmitted: (value) =>
                     ref.read(cityProvider.notifier).state = value,
