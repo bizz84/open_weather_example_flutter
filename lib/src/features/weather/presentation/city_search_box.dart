@@ -26,6 +26,12 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
     super.dispose();
   }
 
+  Future<void> _getUserLocationAndSetCity() async {
+    FocusScope.of(context).unfocus();
+    final weather = await ref.read(userLocationAndCityProvider.future);
+    _searchController.text = weather.description;
+  }
+
   // circular radius
   @override
   Widget build(BuildContext context) {
@@ -41,20 +47,20 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
                 controller: _searchController,
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.black),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(_radius),
                         bottomLeft: Radius.circular(_radius)),
                   ),
                   prefixIcon: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.location_on,
                       color: Color(0xFF4480C6),
                     ),
-                    onPressed: null,
+                    onPressed: () => _getUserLocationAndSetCity(),
                   ),
                 ),
                 onSubmitted: (value) =>
