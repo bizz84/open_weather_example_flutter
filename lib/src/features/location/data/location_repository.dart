@@ -31,7 +31,6 @@ class LocationRepository {
 
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    //debugPrint("Successful");
     // print(Geolocator.getCurrentPosition());
 
     Position position = await Geolocator.getCurrentPosition(

@@ -26,6 +26,7 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
     super.dispose();
   }
 
+// TODO: Call weather by cityName
   Future<void> _getUserLocationAndSetCity() async {
     FocusScope.of(context).unfocus();
     final weather = await ref.read(userLocationAndCityProvider.future);
