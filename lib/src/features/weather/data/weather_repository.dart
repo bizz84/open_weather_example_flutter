@@ -8,6 +8,8 @@ import 'package:open_weather_example_flutter/src/features/weather/data/api_excep
 import 'package:open_weather_example_flutter/src/features/weather/domain/forecast/forecast.dart';
 import 'package:open_weather_example_flutter/src/features/weather/domain/weather/weather.dart';
 
+import '../../location/domain/location.dart';
+
 /// Weather Repository using the http client. Calls API methods and parses responses.
 class HttpWeatherRepository {
   HttpWeatherRepository({required this.api, required this.client});
@@ -21,6 +23,10 @@ class HttpWeatherRepository {
 
   Future<Weather> getWeather({required String city}) => _getData(
         uri: api.weather(city),
+        builder: (data) => Weather.fromJson(data),
+      );
+  Future<Weather> getWeatherByLatLon({required Location location}) => _getData(
+        uri: api.weatherByLatLon(location),
         builder: (data) => Weather.fromJson(data),
       );
 
@@ -49,13 +55,6 @@ class HttpWeatherRepository {
 
 /// Providers used by rest of the app
 final weatherRepositoryProvider = Provider<HttpWeatherRepository>((ref) {
-  /// Use the API key passed via --dart-define,
-  /// or fallback to the one defined in api_keys.dart
-  // set key to const
-  const apiKey = String.fromEnvironment(
-    'API_KEY',
-    defaultValue: APIKeys.openWeatherAPIKey,
-  );
   return HttpWeatherRepository(
     api: OpenWeatherMapAPI(apiKey),
     client: http.Client(),
