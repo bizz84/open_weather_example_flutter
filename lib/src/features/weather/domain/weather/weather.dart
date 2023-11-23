@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'weather.freezed.dart';
 part 'weather.g.dart';
 
+// ignore_for_file:invalid_annotation_target
 @freezed
 class WeatherParams with _$WeatherParams {
   factory WeatherParams({

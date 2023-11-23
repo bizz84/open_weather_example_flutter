@@ -79,11 +79,11 @@ class _$WeatherParamsCopyWithImpl<$Res, $Val extends WeatherParams>
 }
 
 /// @nodoc
-abstract class _$$_WeatherParamsCopyWith<$Res>
+abstract class _$$WeatherParamsImplCopyWith<$Res>
     implements $WeatherParamsCopyWith<$Res> {
-  factory _$$_WeatherParamsCopyWith(
-          _$_WeatherParams value, $Res Function(_$_WeatherParams) then) =
-      __$$_WeatherParamsCopyWithImpl<$Res>;
+  factory _$$WeatherParamsImplCopyWith(
+          _$WeatherParamsImpl value, $Res Function(_$WeatherParamsImpl) then) =
+      __$$WeatherParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -93,11 +93,11 @@ abstract class _$$_WeatherParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_WeatherParamsCopyWithImpl<$Res>
-    extends _$WeatherParamsCopyWithImpl<$Res, _$_WeatherParams>
-    implements _$$_WeatherParamsCopyWith<$Res> {
-  __$$_WeatherParamsCopyWithImpl(
-      _$_WeatherParams _value, $Res Function(_$_WeatherParams) _then)
+class __$$WeatherParamsImplCopyWithImpl<$Res>
+    extends _$WeatherParamsCopyWithImpl<$Res, _$WeatherParamsImpl>
+    implements _$$WeatherParamsImplCopyWith<$Res> {
+  __$$WeatherParamsImplCopyWithImpl(
+      _$WeatherParamsImpl _value, $Res Function(_$WeatherParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +107,7 @@ class __$$_WeatherParamsCopyWithImpl<$Res>
     Object? tempMin = null,
     Object? tempMax = null,
   }) {
-    return _then(_$_WeatherParams(
+    return _then(_$WeatherParamsImpl(
       temp: null == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
@@ -126,14 +126,14 @@ class __$$_WeatherParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WeatherParams implements _WeatherParams {
-  _$_WeatherParams(
+class _$WeatherParamsImpl implements _WeatherParams {
+  _$WeatherParamsImpl(
       {required this.temp,
       @JsonKey(name: 'temp_min') required this.tempMin,
       @JsonKey(name: 'temp_max') required this.tempMax});
 
-  factory _$_WeatherParams.fromJson(Map<String, dynamic> json) =>
-      _$$_WeatherParamsFromJson(json);
+  factory _$WeatherParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeatherParamsImplFromJson(json);
 
   @override
   final double temp;
@@ -153,7 +153,7 @@ class _$_WeatherParams implements _WeatherParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WeatherParams &&
+            other is _$WeatherParamsImpl &&
             (identical(other.temp, temp) || other.temp == temp) &&
             (identical(other.tempMin, tempMin) || other.tempMin == tempMin) &&
             (identical(other.tempMax, tempMax) || other.tempMax == tempMax));
@@ -166,12 +166,12 @@ class _$_WeatherParams implements _WeatherParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WeatherParamsCopyWith<_$_WeatherParams> get copyWith =>
-      __$$_WeatherParamsCopyWithImpl<_$_WeatherParams>(this, _$identity);
+  _$$WeatherParamsImplCopyWith<_$WeatherParamsImpl> get copyWith =>
+      __$$WeatherParamsImplCopyWithImpl<_$WeatherParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WeatherParamsToJson(
+    return _$$WeatherParamsImplToJson(
       this,
     );
   }
@@ -182,10 +182,10 @@ abstract class _WeatherParams implements WeatherParams {
           {required final double temp,
           @JsonKey(name: 'temp_min') required final double tempMin,
           @JsonKey(name: 'temp_max') required final double tempMax}) =
-      _$_WeatherParams;
+      _$WeatherParamsImpl;
 
   factory _WeatherParams.fromJson(Map<String, dynamic> json) =
-      _$_WeatherParams.fromJson;
+      _$WeatherParamsImpl.fromJson;
 
   @override
   double get temp;
@@ -197,7 +197,7 @@ abstract class _WeatherParams implements WeatherParams {
   double get tempMax;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherParamsCopyWith<_$_WeatherParams> get copyWith =>
+  _$$WeatherParamsImplCopyWith<_$WeatherParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -261,22 +261,22 @@ class _$WeatherInfoCopyWithImpl<$Res, $Val extends WeatherInfo>
 }
 
 /// @nodoc
-abstract class _$$_WeatherInfoCopyWith<$Res>
+abstract class _$$WeatherInfoImplCopyWith<$Res>
     implements $WeatherInfoCopyWith<$Res> {
-  factory _$$_WeatherInfoCopyWith(
-          _$_WeatherInfo value, $Res Function(_$_WeatherInfo) then) =
-      __$$_WeatherInfoCopyWithImpl<$Res>;
+  factory _$$WeatherInfoImplCopyWith(
+          _$WeatherInfoImpl value, $Res Function(_$WeatherInfoImpl) then) =
+      __$$WeatherInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String main, String description, String icon});
 }
 
 /// @nodoc
-class __$$_WeatherInfoCopyWithImpl<$Res>
-    extends _$WeatherInfoCopyWithImpl<$Res, _$_WeatherInfo>
-    implements _$$_WeatherInfoCopyWith<$Res> {
-  __$$_WeatherInfoCopyWithImpl(
-      _$_WeatherInfo _value, $Res Function(_$_WeatherInfo) _then)
+class __$$WeatherInfoImplCopyWithImpl<$Res>
+    extends _$WeatherInfoCopyWithImpl<$Res, _$WeatherInfoImpl>
+    implements _$$WeatherInfoImplCopyWith<$Res> {
+  __$$WeatherInfoImplCopyWithImpl(
+      _$WeatherInfoImpl _value, $Res Function(_$WeatherInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -286,7 +286,7 @@ class __$$_WeatherInfoCopyWithImpl<$Res>
     Object? description = null,
     Object? icon = null,
   }) {
-    return _then(_$_WeatherInfo(
+    return _then(_$WeatherInfoImpl(
       main: null == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
@@ -305,12 +305,12 @@ class __$$_WeatherInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WeatherInfo implements _WeatherInfo {
-  _$_WeatherInfo(
+class _$WeatherInfoImpl implements _WeatherInfo {
+  _$WeatherInfoImpl(
       {required this.main, required this.description, required this.icon});
 
-  factory _$_WeatherInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_WeatherInfoFromJson(json);
+  factory _$WeatherInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeatherInfoImplFromJson(json);
 
   @override
   final String main;
@@ -328,7 +328,7 @@ class _$_WeatherInfo implements _WeatherInfo {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WeatherInfo &&
+            other is _$WeatherInfoImpl &&
             (identical(other.main, main) || other.main == main) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -342,12 +342,12 @@ class _$_WeatherInfo implements _WeatherInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WeatherInfoCopyWith<_$_WeatherInfo> get copyWith =>
-      __$$_WeatherInfoCopyWithImpl<_$_WeatherInfo>(this, _$identity);
+  _$$WeatherInfoImplCopyWith<_$WeatherInfoImpl> get copyWith =>
+      __$$WeatherInfoImplCopyWithImpl<_$WeatherInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WeatherInfoToJson(
+    return _$$WeatherInfoImplToJson(
       this,
     );
   }
@@ -357,10 +357,10 @@ abstract class _WeatherInfo implements WeatherInfo {
   factory _WeatherInfo(
       {required final String main,
       required final String description,
-      required final String icon}) = _$_WeatherInfo;
+      required final String icon}) = _$WeatherInfoImpl;
 
   factory _WeatherInfo.fromJson(Map<String, dynamic> json) =
-      _$_WeatherInfo.fromJson;
+      _$WeatherInfoImpl.fromJson;
 
   @override
   String get main;
@@ -370,7 +370,7 @@ abstract class _WeatherInfo implements WeatherInfo {
   String get icon;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherInfoCopyWith<_$_WeatherInfo> get copyWith =>
+  _$$WeatherInfoImplCopyWith<_$WeatherInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -447,10 +447,10 @@ class _$WeatherCopyWithImpl<$Res, $Val extends Weather>
 }
 
 /// @nodoc
-abstract class _$$_WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
-  factory _$$_WeatherCopyWith(
-          _$_Weather value, $Res Function(_$_Weather) then) =
-      __$$_WeatherCopyWithImpl<$Res>;
+abstract class _$$WeatherImplCopyWith<$Res> implements $WeatherCopyWith<$Res> {
+  factory _$$WeatherImplCopyWith(
+          _$WeatherImpl value, $Res Function(_$WeatherImpl) then) =
+      __$$WeatherImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -463,10 +463,11 @@ abstract class _$$_WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_WeatherCopyWithImpl<$Res>
-    extends _$WeatherCopyWithImpl<$Res, _$_Weather>
-    implements _$$_WeatherCopyWith<$Res> {
-  __$$_WeatherCopyWithImpl(_$_Weather _value, $Res Function(_$_Weather) _then)
+class __$$WeatherImplCopyWithImpl<$Res>
+    extends _$WeatherCopyWithImpl<$Res, _$WeatherImpl>
+    implements _$$WeatherImplCopyWith<$Res> {
+  __$$WeatherImplCopyWithImpl(
+      _$WeatherImpl _value, $Res Function(_$WeatherImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -476,7 +477,7 @@ class __$$_WeatherCopyWithImpl<$Res>
     Object? weatherInfo = null,
     Object? dt = null,
   }) {
-    return _then(_$_Weather(
+    return _then(_$WeatherImpl(
       weatherParams: null == weatherParams
           ? _value.weatherParams
           : weatherParams // ignore: cast_nullable_to_non_nullable
@@ -495,15 +496,15 @@ class __$$_WeatherCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Weather implements _Weather {
-  _$_Weather(
+class _$WeatherImpl implements _Weather {
+  _$WeatherImpl(
       {@JsonKey(name: 'main') required this.weatherParams,
       @JsonKey(name: 'weather') required final List<WeatherInfo> weatherInfo,
       required this.dt})
       : _weatherInfo = weatherInfo;
 
-  factory _$_Weather.fromJson(Map<String, dynamic> json) =>
-      _$$_WeatherFromJson(json);
+  factory _$WeatherImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeatherImplFromJson(json);
 
   @override
   @JsonKey(name: 'main')
@@ -529,7 +530,7 @@ class _$_Weather implements _Weather {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Weather &&
+            other is _$WeatherImpl &&
             (identical(other.weatherParams, weatherParams) ||
                 other.weatherParams == weatherParams) &&
             const DeepCollectionEquality()
@@ -545,12 +546,12 @@ class _$_Weather implements _Weather {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WeatherCopyWith<_$_Weather> get copyWith =>
-      __$$_WeatherCopyWithImpl<_$_Weather>(this, _$identity);
+  _$$WeatherImplCopyWith<_$WeatherImpl> get copyWith =>
+      __$$WeatherImplCopyWithImpl<_$WeatherImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WeatherToJson(
+    return _$$WeatherImplToJson(
       this,
     );
   }
@@ -560,9 +561,9 @@ abstract class _Weather implements Weather {
   factory _Weather(
       {@JsonKey(name: 'main') required final WeatherParams weatherParams,
       @JsonKey(name: 'weather') required final List<WeatherInfo> weatherInfo,
-      required final int dt}) = _$_Weather;
+      required final int dt}) = _$WeatherImpl;
 
-  factory _Weather.fromJson(Map<String, dynamic> json) = _$_Weather.fromJson;
+  factory _Weather.fromJson(Map<String, dynamic> json) = _$WeatherImpl.fromJson;
 
   @override
   @JsonKey(name: 'main')
@@ -574,6 +575,6 @@ abstract class _Weather implements Weather {
   int get dt;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherCopyWith<_$_Weather> get copyWith =>
+  _$$WeatherImplCopyWith<_$WeatherImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

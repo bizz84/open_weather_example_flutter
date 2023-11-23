@@ -4,7 +4,7 @@ import 'package:open_weather_example_flutter/src/constants/app_colors.dart';
 import 'package:open_weather_example_flutter/src/features/weather/application/providers.dart';
 
 class CitySearchBox extends ConsumerStatefulWidget {
-  const CitySearchBox({Key? key}) : super(key: key);
+  const CitySearchBox({super.key});
   @override
   ConsumerState<CitySearchBox> createState() => _CitySearchRowState();
 }

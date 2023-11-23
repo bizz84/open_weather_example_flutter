@@ -6,7 +6,7 @@ import 'package:open_weather_example_flutter/src/features/weather/domain/weather
 import 'package:open_weather_example_flutter/src/features/weather/presentation/weather_icon_image.dart';
 
 class HourlyWeather extends ConsumerWidget {
-  const HourlyWeather({Key? key}) : super(key: key);
+  const HourlyWeather({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,8 +28,7 @@ class HourlyWeather extends ConsumerWidget {
 }
 
 class HourlyWeatherRow extends StatelessWidget {
-  const HourlyWeatherRow({Key? key, required this.weatherDataItems})
-      : super(key: key);
+  const HourlyWeatherRow({super.key, required this.weatherDataItems});
   final List<WeatherData> weatherDataItems;
 
   @override
@@ -44,7 +43,7 @@ class HourlyWeatherRow extends StatelessWidget {
 }
 
 class HourlyWeatherItem extends ConsumerWidget {
-  const HourlyWeatherItem({Key? key, required this.data}) : super(key: key);
+  const HourlyWeatherItem({super.key, required this.data});
   final WeatherData data;
 
   @override

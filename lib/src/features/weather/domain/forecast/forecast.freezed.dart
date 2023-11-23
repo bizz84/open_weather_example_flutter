@@ -61,21 +61,22 @@ class _$ForecastCopyWithImpl<$Res, $Val extends Forecast>
 }
 
 /// @nodoc
-abstract class _$$_ForecastCopyWith<$Res> implements $ForecastCopyWith<$Res> {
-  factory _$$_ForecastCopyWith(
-          _$_Forecast value, $Res Function(_$_Forecast) then) =
-      __$$_ForecastCopyWithImpl<$Res>;
+abstract class _$$ForecastImplCopyWith<$Res>
+    implements $ForecastCopyWith<$Res> {
+  factory _$$ForecastImplCopyWith(
+          _$ForecastImpl value, $Res Function(_$ForecastImpl) then) =
+      __$$ForecastImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Weather> list});
 }
 
 /// @nodoc
-class __$$_ForecastCopyWithImpl<$Res>
-    extends _$ForecastCopyWithImpl<$Res, _$_Forecast>
-    implements _$$_ForecastCopyWith<$Res> {
-  __$$_ForecastCopyWithImpl(
-      _$_Forecast _value, $Res Function(_$_Forecast) _then)
+class __$$ForecastImplCopyWithImpl<$Res>
+    extends _$ForecastCopyWithImpl<$Res, _$ForecastImpl>
+    implements _$$ForecastImplCopyWith<$Res> {
+  __$$ForecastImplCopyWithImpl(
+      _$ForecastImpl _value, $Res Function(_$ForecastImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -83,7 +84,7 @@ class __$$_ForecastCopyWithImpl<$Res>
   $Res call({
     Object? list = null,
   }) {
-    return _then(_$_Forecast(
+    return _then(_$ForecastImpl(
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -94,11 +95,11 @@ class __$$_ForecastCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Forecast implements _Forecast {
-  _$_Forecast({required final List<Weather> list}) : _list = list;
+class _$ForecastImpl implements _Forecast {
+  _$ForecastImpl({required final List<Weather> list}) : _list = list;
 
-  factory _$_Forecast.fromJson(Map<String, dynamic> json) =>
-      _$$_ForecastFromJson(json);
+  factory _$ForecastImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ForecastImplFromJson(json);
 
   final List<Weather> _list;
   @override
@@ -117,7 +118,7 @@ class _$_Forecast implements _Forecast {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Forecast &&
+            other is _$ForecastImpl &&
             const DeepCollectionEquality().equals(other._list, _list));
   }
 
@@ -129,26 +130,27 @@ class _$_Forecast implements _Forecast {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ForecastCopyWith<_$_Forecast> get copyWith =>
-      __$$_ForecastCopyWithImpl<_$_Forecast>(this, _$identity);
+  _$$ForecastImplCopyWith<_$ForecastImpl> get copyWith =>
+      __$$ForecastImplCopyWithImpl<_$ForecastImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ForecastToJson(
+    return _$$ForecastImplToJson(
       this,
     );
   }
 }
 
 abstract class _Forecast implements Forecast {
-  factory _Forecast({required final List<Weather> list}) = _$_Forecast;
+  factory _Forecast({required final List<Weather> list}) = _$ForecastImpl;
 
-  factory _Forecast.fromJson(Map<String, dynamic> json) = _$_Forecast.fromJson;
+  factory _Forecast.fromJson(Map<String, dynamic> json) =
+      _$ForecastImpl.fromJson;
 
   @override
   List<Weather> get list;
   @override
   @JsonKey(ignore: true)
-  _$$_ForecastCopyWith<_$_Forecast> get copyWith =>
+  _$$ForecastImplCopyWith<_$ForecastImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
